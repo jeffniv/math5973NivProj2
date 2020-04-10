@@ -1,0 +1,19 @@
+---
+title: "math5973NivProj2"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{math5973NivProj2}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(math5973NivProj2)
+```
