@@ -1,11 +1,8 @@
----
-title: "A Simple Framework for Singular Spectrum Analysis"
-author: "Jeff Nivitanont"
-date: "April 10, 2020"
-output:
-    html_document:
-        toc: true
----
+
+# title: "A Simple Framework for Singular Spectrum Analysis"
+# author: "Jeff Nivitanont"
+# date: "April 10, 2020"
+
 
 # Intro
 
