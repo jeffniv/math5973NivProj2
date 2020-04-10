@@ -1,7 +1,7 @@
 
-# title: "A Simple Framework for Singular Spectrum Analysis"
-# author: "Jeff Nivitanont"
-# date: "April 10, 2020"
+# A Simple Framework for Singular Spectrum Analysis
+# by Jeff Nivitanont
+# April 10, 2020
 
 
 # Intro
