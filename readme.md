@@ -12,6 +12,8 @@ This package provides tools for Singular Spectrum Analysis(SSA). The tools in th
 * 3. Grouping
 * 4. Reconstruction
 
+See vignette for details on SSA.
+
 # Basic uses of SSA
 
 ## Trend extraction
