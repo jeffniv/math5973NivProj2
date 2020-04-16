@@ -4,16 +4,28 @@
 \alias{plot.ssa}
 \title{Singular Spectrum Analysis}
 \usage{
-\method{plot}{ssa}(ssa, pcs = 1:4)
+\method{plot}{ssa}(ssa, pcs = 1:4, log = TRUE)
 }
 \arguments{
 \item{ssa}{an object of class \code{ssa}}
 
 \item{pcs}{a vector of integers specifying which principal components to plot}
+
+\item{log}{\code{logical} option to plot the singular values in log-scale. \code{default: TRUE}.}
 }
 \value{
 None
 }
 \description{
 A \code{ssa} class object to perform a singular spectrum analysis.
+}
+\details{
+The principal components represent the data projected onto orthogonal eigenspaces. The
+    marginal distribution plots aid in determining the noise components, which should have normal
+    distribution. The last plot is the scree plot. Jumps in the singular values indicate groupings,
+    components that are related to a certain signal.
+}
+\examples{
+obj=ssa(co2,18)
+plot(obj)
 }

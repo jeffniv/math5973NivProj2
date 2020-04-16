@@ -7,11 +7,16 @@
 embed.ssa(series, window.length = 12)
 }
 \arguments{
-\item{window.length}{}
+\item{series}{spatio/temporal series}
+
+\item{window.length}{subseries length}
 }
 \value{
 a Hankel-type, trajectory matrix X
 }
 \description{
 This is a helper function for the `math5973NivProj2` package.
+}
+\details{
+The Hankel structure is similar to a Toeplitz structure except that the skew-diagonals are constant.
 }

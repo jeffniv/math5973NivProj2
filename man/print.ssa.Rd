@@ -10,8 +10,12 @@
 \item{ssa}{an object of class \code{ssa}}
 }
 \value{
-an object of class \code{ssa}
+None
 }
 \description{
-A \code{ssa} class object to perform a singular spectrum analysis.
+Given an object of class \code{ssa}, the \code{print} function prints to the command line in descending order the standard deviations accounted for by each principal component.
+}
+\examples{
+obj=ssa(co2,18)
+print(obj)
 }

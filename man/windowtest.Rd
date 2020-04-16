@@ -16,6 +16,9 @@ None
 Plots Lag-correlation, Autocorrelation, and Partial Autocorrelation as
 a heuristic for determining optimal window length.
 }
+\details{
+When choosing a window length, one should consider the lengths associated with the highest and lowest correlation values in the top plot, this tells the user the approx. period of oscillatory data. The autocorrelation plot in the middle gives significance for relationships in the time series, steps in the autocorrelation plot signify signal lengths. In the partial autocorrelation plot, the values in the index behind the values near zero are considered significant length for signal lengths.
+}
 \examples{
 obj=ssa(co2,18)
 windowtest(obj)

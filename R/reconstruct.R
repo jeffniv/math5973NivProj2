@@ -26,7 +26,8 @@ reconstruct <- function(ssa, pcs=c(1,2), pct.var=NULL, inplace=T, plot=T){
     }
     selector = diag(ssa$X.svd$d)
     if(!is.null(pct.var)){
-        diag(selector)[which(ssa$pct.var$cumulative >= pct.var)] = 0 #unselect with zeros
+        gtpctvar = which(ssa$pct.var$cumulative >= pct.var)
+        diag(selector)[gtpctvar[2:length(gtpctvar)]] = 0 #unselect with zeros
         pcs=(diag(selector)!=0)
     }else{
         diag(selector)[-pcs] = 0 #unselect with zeros
@@ -37,17 +38,24 @@ reconstruct <- function(ssa, pcs=c(1,2), pct.var=NULL, inplace=T, plot=T){
     if(plot){
         xticks=1:ssa$series.length
         if(is.element(1,pcs) | !is.null(pct.var)){
+            suppressMessages({
             g1=qplot(xticks,ssa$series, geom='line',aes(color='black'))+geom_line(aes(y=flat,color='blue'))+
                 scale_color_manual(name=NULL,values=c('black','blue'),labels=c('orig.','recon.'))+
                 labs(x='time',y='series',title=paste('# of PCs =', sum(pcs),', recon. error=', round((1-sum(ssa$pct.var$total[pcs]))*100,4) ,'%'))
+            })
         }else{
-            g1=qplot(xticks, flat, geom='line',aes(color='blue'))+theme(legend.position = 'none')+
-                labs(x='time',y='series',title=paste('# of PCs =', sum(pcs),', recon. error=', round((1-sum(ssa$pct.var$total[pcs]))*100,4) ,'%'))
+            suppressMessages({
+                g1=qplot(xticks, flat, geom='line',aes(color='blue'))+theme(legend.position = 'none')+
+                    labs(x='time',y='series',title=paste('# of PCs =', length(pcs),', recon. error=', round((1-sum(ssa$pct.var$total[pcs]))*100,4) ,'%'))
+            })
         }
-        g2=qplot(xticks,residual,geom='line',color='red')+labs(x='time',y='residual')+theme(legend.position = 'none')+geom_point(alpha=0)
-        g2=ggExtra::ggMarginal(g2,margins = 'y',type = 'densigram',size=11)
+        suppressMessages({
+            g2=qplot(xticks,residual,geom='line',color='red')+labs(x='time',y='residual')+theme(legend.position = 'none')+geom_point(alpha=0)
+            g2=ggExtra::ggMarginal(g2,margins = 'y',type = 'densigram',size=11)
+        })
         dev.new(noRStudioGD = T)
-        gridExtra::grid.arrange(g1,g2,ncol=1,heights=c(7,4))
+        suppressMessages({gridExtra::grid.arrange(g1,g2,ncol=1,heights=c(7,4))
+        })
     }
     if(inplace){
         eval.parent(substitute(ssa[['X.recon']]<-recon))

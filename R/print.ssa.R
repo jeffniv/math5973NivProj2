@@ -1,12 +1,15 @@
 #' Singular Spectrum Analysis
 #'
-#' A \code{ssa} class object to perform a singular spectrum analysis.
+#' Given an object of class \code{ssa}, the \code{print} function prints to the command line in descending order the standard deviations accounted for by each principal component.
 #'
 #' @param ssa an object of class \code{ssa}
 #'
-#' @return an object of class \code{ssa}
+#' @return None
 #' @export
 #'
+#' @examples
+#' obj=ssa(co2,18)
+#' print(obj)
 
 print.ssa = function(ssa){
     cat('Call:\n')

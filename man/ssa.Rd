@@ -17,6 +17,12 @@ an object of class \code{ssa}
 \description{
 This functon constructs an \code{ssa} class object to perform a singular spectrum analysis.
 }
+\details{
+Singular Spectrum Analysis (SSA) is a model-free technique to analyze a 1-D series and extract signal components from noise components. The four basic steps of SSA are: 1. embedding, 2. singular value decomposition, 3. grouping, 4. reconstruction. This constructor function effectively executes steps 1 and 2. The function \code{windowtest} serves as a diagnostic aid for parameter selection. The \code{plot}, \code{print}, \code{summary}, and \code{combinepatterns} functions aid the user in step 3. Finally, step 4 is accomplished via the \code{reconstruct} function.
+}
 \examples{
-ssa(co2,18)
+obj=ssa(co2,18)
+plot(obj)
+print(obj)
+summary(obj)
 }

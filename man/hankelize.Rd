@@ -12,3 +12,6 @@ hankelize(X)
 \description{
 This is a helper function for the `math5973NivProj2` package.
 }
+\details{
+The hankelization algorithm calculates and assigns as the value the mean of the skew-diagonal for all corresponding skew-diagonal entries.
+}

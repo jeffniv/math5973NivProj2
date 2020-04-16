@@ -3,6 +3,9 @@
 #' This is a helper function for the `math5973NivProj2` package.
 #'
 #' @param X trajectory matrix
+#'
+#' @details The hankelization algorithm calculates and assigns as the value the mean of the skew-diagonal for all corresponding skew-diagonal entries.
+#'
 
 hankelize=function(X){
     m=dim(X)[1]

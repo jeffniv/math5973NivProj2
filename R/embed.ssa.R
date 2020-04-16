@@ -2,8 +2,10 @@
 #'
 #' This is a helper function for the `math5973NivProj2` package.
 #'
-#' @param series
-#' @param window.length
+#' @param series spatio/temporal series
+#' @param window.length subseries length
+#'
+#' @details The Hankel structure is similar to a Toeplitz structure except that the skew-diagonals are constant.
 #'
 #' @return a Hankel-type, trajectory matrix X
 #'

@@ -3,6 +3,7 @@
 S3method(plot,ssa)
 S3method(print,ssa)
 S3method(summary,ssa)
+export(combinepatterns)
 export(reconstruct)
 export(ssa)
 export(windowtest)
