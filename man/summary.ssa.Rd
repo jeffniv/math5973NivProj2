@@ -13,5 +13,12 @@
 an object of class \code{ssa}
 }
 \description{
-A \code{ssa} class object to perform a singular spectrum analysis.
+Given an \code{ssa} class object, the cumulative and total proportion of variance accounted for by each principal component is printed to the command line in descending order.
+}
+\details{
+The sum of the eigenvalues of a covariance matrix is equal to the total variance in the data. The proportion of variance accounted for by a principal component is its eigenvalue divided by the sum of all eigenvalues.
+}
+\examples{
+obj=ssa(co2,18)
+summary(obj)
 }
