@@ -41,7 +41,7 @@ reconstruct <- function(ssa, pcs=c(1,2), pct.var=NULL, inplace=T, plot=T){
             suppressMessages({
             g1=qplot(xticks,ssa$series, geom='line',aes(color='black'))+geom_line(aes(y=flat,color='blue'))+
                 scale_color_manual(name=NULL,values=c('black','blue'),labels=c('orig.','recon.'))+
-                labs(x='time',y='series',title=paste('# of PCs =', sum(pcs),', recon. error=', round((1-sum(ssa$pct.var$total[pcs]))*100,4) ,'%'))
+                labs(x='time',y='series',title=paste('# of PCs =', sum(as.logical(pcs)),', recon. error=', round((1-sum(ssa$pct.var$total[pcs]))*100,4) ,'%'))
             })
         }else{
             suppressMessages({
